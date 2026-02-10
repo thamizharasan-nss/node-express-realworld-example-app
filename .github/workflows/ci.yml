@@ -32,3 +32,7 @@ jobs:
 
       - name: Run Aqua Build Security
         uses: aquasecurity/build-security-action@main  
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: HIGH,CRITICAL
