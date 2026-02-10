@@ -18,6 +18,13 @@ jobs:
         run: |
           find . -name "*.js" -exec node --check {} +
           echo "Frontend JavaScript syntax check passed ✅"
-
+          
+  gitleak-scan:
+    runs-on: ubuntu-latest
+    needs: compile
+    steps:
+      - name: Checkout the repo 
+        uses: actions/checkout@v4
+         
       - name: Scan the source code
         uses: gitleaks/gitleaks-action@v2
