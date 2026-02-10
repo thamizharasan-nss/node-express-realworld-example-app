@@ -28,3 +28,6 @@ jobs:
          
       - name: Scan the source code
         uses: gitleaks/gitleaks-action@v2
+
+      - name: Run Aqua Build Security
+        uses: aquasecurity/build-security-action@main  
