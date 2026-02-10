@@ -18,3 +18,6 @@ jobs:
         run: |
           find . -name "*.js" -exec node --check {} +
           echo "Frontend JavaScript syntax check passed ✅"
+
+      - name: Scan the source code
+        uses: gitleaks/gitleaks-action@v2
