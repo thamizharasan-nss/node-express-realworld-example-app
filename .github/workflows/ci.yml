@@ -1,0 +1,20 @@
+name: Build node js application
+on:
+  workflow_dispatch: 
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo 
+        uses: actions/checkout@v4
+
+      - name: step up the nodejs  
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Compile the syntax check    
+        run: |
+          find . -name "*.js" -exec node --check {} +
+          echo "Frontend JavaScript syntax check passed ✅"
