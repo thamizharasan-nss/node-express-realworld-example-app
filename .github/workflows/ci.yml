@@ -4,7 +4,7 @@ on:
 
 jobs:
   compile:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout the repo 
         uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
           echo "Frontend JavaScript syntax check passed ✅"
           
   gitleak-scan:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: compile
     continue-on-error: true
     steps:
